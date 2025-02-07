@@ -1,0 +1,46 @@
+/* Full-Screen Weather Container */
+
+  
+  /* Forecast Layout - Ensures Each Day is Large */
+  .forecast-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 95vw;
+    height: 85vh;
+    gap: 15px;
+  }
+  
+  /* Each Forecast Card */
+  .forecast-card {
+    flex: 1; /* Ensures equal width */
+    height: 100%;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+
+  /* Weather Text Styling */
+  .forecast-card p {
+    margin: 5px 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Weather Icon */
+  .forecast-card img {
+    width: 80px;
+    height: 80px;
+    z-index: 2;
+  }
+  
