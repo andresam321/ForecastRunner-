@@ -5,7 +5,8 @@ import "./WeatherStyles.css"
 const weatherBackgrounds = {
     "Sunny": "url('/backgrounds/sun_GIF.gif')",
     "Partly cloudy": "url('/backgrounds/Cloudy_GIF.gif')",
-    "Cloudy ": "url('/backgrounds/Cloudy_GIF.gif')",
+    "Partly Cloudy ": "url('/backgrounds/Cloudy_GIF.gif')",
+    "Cloudy ": "url('/backgrounds/heavy_clouds_GIF.gif')",
     "Overcast": "url('/backgrounds/fog_mist_GIF.gif')",
     "Rain": "url('/backgrounds/rainy_day_night_GIF.gif')",
     "Patchy rain possible": "url('/backgrounds/rainy_day_night_GIF.gif')",
@@ -26,7 +27,7 @@ const WeatherAPI = () => {
     const [city, setCity] = useState("")
     const [weather, setWeather] = useState("")
     const [error, setError] = useState("")
-    const apiKey = "875ec68866a94c938cf32744250702"
+    const apiKey = ""
 
     // const selectedDayWeather = weather?.current?.condition?.text;
     // const backgroundImage = weatherBackgrounds[selectedDayWeather] || weatherBackgrounds["Default"];
@@ -108,7 +109,7 @@ return (
 
   
             return (
-              <div 
+            <div 
               key={index} 
               className="forecast-card"
               style={{
@@ -118,10 +119,16 @@ return (
                 backgroundRepeat: "no-repeat"
               }}
               >
+            <div className='text-container'>
                 <p>{isToday ? "Today" : dayDate.split("-").reverse().join("-")}</p>
-                <p>Temperature: {dayTemp}°C</p>
+                <p>
+                    <strong>Temperature: </strong> 
+                    {Math.round((isToday ? weather?.current?.temp_c : day.day.avgtemp_c) * 9/5 + 32)}°F
+                </p>
+                {/* <p>Temperature: {dayTemp}°C</p> */}
                 <p>Condition: {dayWeather}</p>
                 <img src={dayIcon} alt={dayWeather} />
+                </div>
               </div>
             );
           })}

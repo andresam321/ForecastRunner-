@@ -28,14 +28,15 @@
   }
   
 
-  /* Weather Text Styling */
-  .forecast-card p {
-    margin: 5px 0;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #fff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  }
+  .forecast-card {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: flex-start; /* Push content to the top */
+    align-items: center; /* Keep text and icon centered horizontally */
+    height: 100%;
+    padding-top: 10px; /* Add spacing from the top */
+}
+
   
   /* Weather Icon */
   .forecast-card img {
@@ -43,4 +44,9 @@
     height: 80px;
     z-index: 2;
   }
-  
+  .text-container {
+    /* display: flex; */
+    flex-direction: column; /* Stack text vertically */
+    align-items: center; /* Center align text */
+    gap: 5px; /* Add spacing between text */
+}
